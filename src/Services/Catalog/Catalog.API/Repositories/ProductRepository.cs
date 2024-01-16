@@ -19,7 +19,7 @@ namespace Catalog.API.Repositories
 
         public async Task<bool> DeleteProduct(string productId)
         {
-            FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(p => p.Id, productId);
+            FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(p => p.Id, productId);
             DeleteResult deleteResult = await _context.Products.DeleteOneAsync(filter);
 
             return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;

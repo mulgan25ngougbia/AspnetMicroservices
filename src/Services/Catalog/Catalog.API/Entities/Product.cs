@@ -7,6 +7,7 @@ namespace Catalog.API.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("Id")]
         public string Id { get; set; }
         [BsonElement("Name")]
         public string Name { get; set; }
