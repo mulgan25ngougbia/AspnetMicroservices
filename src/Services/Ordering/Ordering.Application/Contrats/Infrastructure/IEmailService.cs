@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Ordering.Application.Contrats.Infrastructure
 {
-    internal interface IEmailService
+    public interface IEmailService
     {
-        Task<bool> SendEmailAsync(Email email);
+        Task<bool> SendEmail(Email email);
     }
 }

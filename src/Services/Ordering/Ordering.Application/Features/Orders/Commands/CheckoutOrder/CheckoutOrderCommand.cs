@@ -1,17 +1,15 @@
-﻿using Ordering.Domain.Common;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ordering.Domain.Entities
+namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 {
-    public class Order : EntityBase
+    public class CheckoutOrderCommand : IRequest<int>
     {
         public string UserName { get; set; }
-        [Column(TypeName = "decimal(7, 2)")]
         public decimal TotalPrice { get; set; }
 
         // BillingAddress
@@ -27,7 +25,7 @@ namespace Ordering.Domain.Entities
         public string CardName { get; set; }
         public string CardNumber { get; set; }
         public string Expiration { get; set; }
-        public string? CVV { get; set; }
+        public string CVV { get; set; }
         public int PaymentMethod { get; set; }
     }
 }

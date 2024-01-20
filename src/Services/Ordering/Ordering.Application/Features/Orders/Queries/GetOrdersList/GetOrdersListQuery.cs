@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.Order.Queries.GetOrdersList
+namespace Ordering.Application.Features.Orders.Queries.GetOrdersList
 {
-    internal class GetOrdersListQuery : IRequest
+    public class GetOrdersListQuery : IRequest<List<OrdersVm>>
     {
         public string UserName { get; set; }
 
